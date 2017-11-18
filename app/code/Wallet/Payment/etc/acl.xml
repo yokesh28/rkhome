@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="Wallet_Payment::Payment" sortOrder="10" title="Payment">
+					<resource id="Wallet_Payment::Payment_save" sortOrder="10" title="Save Payment"/>
+					<resource id="Wallet_Payment::Payment_delete" sortOrder="20" title="Delete Payment"/>
+					<resource id="Wallet_Payment::Payment_update" sortOrder="30" title="Update Payment"/>
+					<resource id="Wallet_Payment::Payment_view" sortOrder="40" title="View Payment"/>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

@@ -1,0 +1,11 @@
+a:4:{i:0;s:289:"Warning: Cannot modify header information - headers already sent by (output started at /home/rkhomeappliances/public_html/app/code/Wallet/Payment/Controller/Cashback/Index.php:47) in /home/rkhomeappliances/public_html/vendor/magento/framework/Stdlib/Cookie/PhpCookieManager.php on line 125";i:1;s:1822:"#0 [internal function]: Magento\Framework\App\ErrorHandler->handler(2, 'Cannot modify h...', '/home/rkhomeapp...', 125, Array)
+#1 /home/rkhomeappliances/public_html/vendor/magento/framework/Stdlib/Cookie/PhpCookieManager.php(125): setcookie('X-Magento-Vary', '252f89d2ca7ad02...', 0, '/', '', true, true)
+#2 /home/rkhomeappliances/public_html/vendor/magento/framework/Stdlib/Cookie/PhpCookieManager.php(78): Magento\Framework\Stdlib\Cookie\PhpCookieManager->setCookie('X-Magento-Vary', '252f89d2ca7ad02...', Array)
+#3 /home/rkhomeappliances/public_html/vendor/magento/framework/App/Response/Http.php(85): Magento\Framework\Stdlib\Cookie\PhpCookieManager->setSensitiveCookie('X-Magento-Vary', '252f89d2ca7ad02...', Object(Magento\Framework\Stdlib\Cookie\SensitiveCookieMetadata))
+#4 /home/rkhomeappliances/public_html/var/generation/Magento/Framework/App/Response/Http/Interceptor.php(37): Magento\Framework\App\Response\Http->sendVary()
+#5 /home/rkhomeappliances/public_html/vendor/magento/module-page-cache/Model/App/Response/HttpPlugin.php(25): Magento\Framework\App\Response\Http\Interceptor->sendVary()
+#6 /home/rkhomeappliances/public_html/vendor/magento/framework/Interception/Interceptor.php(123): Magento\PageCache\Model\App\Response\HttpPlugin->beforeSendResponse(Object(Magento\Framework\App\Response\Http\Interceptor))
+#7 /home/rkhomeappliances/public_html/var/generation/Magento/Framework/App/Response/Http/Interceptor.php(117): Magento\Framework\App\Response\Http\Interceptor->___callPlugins('sendResponse', Array, Array)
+#8 /home/rkhomeappliances/public_html/vendor/magento/framework/App/Bootstrap.php(259): Magento\Framework\App\Response\Http\Interceptor->sendResponse()
+#9 /home/rkhomeappliances/public_html/index.php(39): Magento\Framework\App\Bootstrap->run(Object(Magento\Framework\App\Http))
+#10 {main}";s:3:"url";s:24:"/credits/cashback/index/";s:11:"script_name";s:10:"/index.php";}

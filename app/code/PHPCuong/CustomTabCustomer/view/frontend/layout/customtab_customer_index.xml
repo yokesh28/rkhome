@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2013-2017 GiaPhuGroup, Ltd. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_account"/>
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Backend\Block\Template" name="custom.tab.content" template="PHPCuong_CustomTabCustomer::customtab.phtml"/>
+        </referenceContainer>
+          <referenceBlock name="page.main.title"> 
+            <action method="setPageTitle"> 
+                <argument translate="true" name="title" xsi:type="string">My Cashbacks</argument> 
+            </action> 
+     </referenceBlock> 
+     <referenceContainer name="content"> 
+        <block class="Magento\Framework\View\Element\Template" name="my_card" template="PHPCuong_CustomTabCustomer::mycard.phtml"> 
+        </block> 
+    </referenceContainer>
+    </body>
+</page>

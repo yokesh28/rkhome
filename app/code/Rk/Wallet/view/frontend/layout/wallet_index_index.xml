@@ -1,0 +1,36 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+
+	<head>
+        <title>Rk Wallet</title>
+        <!-- 
+		demo
+		<css src="Rk_Wallet::css/css.css"/>
+		<script src="Rk_Wallet::js/js.js"/>
+		<css src="jquery/fileUploader/css/jquery.fileupload-ui.css"/>
+		<script src="path/file.js" defer="defer"/>
+		<link src="http://url.com" src_type="url"/>
+		<remove src="path/remove/file.css"/>
+
+		-->
+		<css src="Rk_Wallet::css/css.css"/>
+    </head> 
+
+    <body>
+
+
+        <referenceContainer name="sidebar.main">
+            <block class="Rk\Wallet\Block\Index\Sidebar" name="wallet_index_sidebar" before="-" template="Rk_Wallet::wallet_index_sidebar.phtml"/>
+        </referenceContainer>
+
+        <referenceContainer name="content">
+            <block class="Rk\Wallet\Block\Index\Index" name="wallet_index_index" template="Rk_Wallet::wallet_index_index.phtml"/>
+        </referenceContainer>
+        
+        <referenceContainer name="before.body.end">
+    <block class="\Magento\Customer\Block\Form\Login" name="mlx_guestwishlist2_js" template="Magento_Customer::form/login.phtml"/>
+</referenceContainer>
+
+
+
+    </body>
+</page>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Rk_Wallet::parent" title="Wallet" module="Rk_Wallet" sortOrder="100" resource="Rk_Wallet::parent"/>
+        <add id="Rk_Wallet::index" title="CashBack Options" module="Rk_Wallet" sortOrder="10" action="wallet/index" resource="Rk_Wallet::index" parent="Rk_Wallet::parent"/>
+        <add id="Rk_Wallet::Cash" title="Wallet Management" module="Rk_Wallet" sortOrder="20" action="wallet/Cash" resource="Rk_Wallet::Cash" parent="Rk_Wallet::parent"/>
+    </menu>
+</config>

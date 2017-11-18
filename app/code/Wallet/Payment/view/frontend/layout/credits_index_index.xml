@@ -1,0 +1,23 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+
+	<head>
+        <title>Casback Wallet Credits</title>
+        <!-- 
+		demo
+		<css src="Rk_Wallet::css/css.css"/>
+		<script src="Rk_Wallet::js/js.js"/>
+		<css src="jquery/fileUploader/css/jquery.fileupload-ui.css"/>
+		<script src="path/file.js" defer="defer"/>
+		<link src="http://url.com" src_type="url"/>
+		<remove src="path/remove/file.css"/>
+
+		-->
+    </head> 
+    <body>
+
+        <referenceContainer name="sidebar.main">
+            <block class="Wallet\Payment\Block\Index\Index" name="wallet_index_index" before="-" template="Wallet_Payment::credits_index_index.phtml"/>
+        </referenceContainer>
+
+    </body>
+</page>

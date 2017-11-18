@@ -1,0 +1,33 @@
+<style>
+.radioper{
+    margin-left:30px;
+}
+.amttxt{
+    margin-left:62px;
+}
+.dayss{
+    margin-top:30px;
+}
+.checkbox, .radio{
+    display:inline!important;
+}
+</style>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/ rel="stylesheet">
+<div class="testbox">
+
+  <form action="/">
+      <hr>
+    <div class="accounttype">
+      <input type="radio" value="None" id="cash" name="account" checked/>
+      <label for="radioOne" class="radio">Cash</label>
+      <input type="radio" value="None" id="percentage" class="radioper" name="account" />
+      <label for="radioTwo" class="radio">Percentage</label>
+      <input type="text" name="name" id="name" placeholder="Value" class="amttxt" required/></br>
+      
+      <label id="icon" for="days">No of days to enable cashback:</label>
+      
+      <input type="text" name="name" id="name" placeholder="Enter Days" class="dayss" required/></br>
+      <input type="submit" class="btn btn-primary" value="SUBMIT">
+    </div>
+  </form>
+</div>

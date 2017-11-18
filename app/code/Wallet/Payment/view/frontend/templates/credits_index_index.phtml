@@ -1,0 +1,22 @@
+<?php
+$collection = $this->getProductName();
+?>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach ($collection as $item): ?>  
+      <tr>
+        <td><?php echo $item->getId();?></td>
+        <td><?php echo $item->getProductName();?></td>
+        <td><?php echo $item->getCreatedAt();?></td>
+      </tr>
+    <?php endforeach; ?>  
+    </tbody>
+</table>

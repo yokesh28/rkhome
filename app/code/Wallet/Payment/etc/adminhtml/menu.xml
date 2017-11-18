@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Wallet::top_level" module="Wallet_Payment" resource="Magento_Backend::content" sortOrder="9999" title="Wallet"/>
+		<add action="wallet_payment/payment/index" id="Wallet::wallet_payment_payment" module="Wallet_Payment" parent="Wallet::top_level" resource="Magento_Backend::content" sortOrder="9999" title="Payment"/>
+	</menu>
+</config>

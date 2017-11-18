@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+	<group id="default">
+		<job instance="Wallet\Payment\Cron\Approval" method="execute" name="wallet_payment_approval">
+			<schedule>0 0 */60 * *</schedule>
+		</job>
+	</group>
+</config>

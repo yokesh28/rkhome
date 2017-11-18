@@ -1,0 +1,2 @@
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1511009038;s:6:"expire";i:9999999999;s:4:"tags";s:23:"ba2_REFLECTION,ba2_MAGE";}
+a:1:{s:25:"estimateByExtendedAddress";a:4:{s:4:"type";s:49:"\Magento\Quote\Api\Data\ShippingMethodInterface[]";s:10:"isRequired";b:1;s:11:"description";s:28:"An array of shipping methods";s:14:"parameterCount";i:2;}}

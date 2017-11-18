@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+ 
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ 
+xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+ 
+<menu>
+ 
+<add id="Schemes_Mymenu::first_level_Schemes"
+ 
+title="Schemes"
+ 
+module="Schemes_Mymenu"
+ 
+sortOrder="20"
+ 
+resource="Magento_Backend::content" />
+ 
+
+<add id="Schemes_Mymenu::second_level_Schemes"
+ 
+title="Schemes Product"
+ 
+module="Schemes_Mymenu"
+ 
+sortOrder="1"
+ 
+action="catalog/product/index"
+ 
+parent="Schemes_Mymenu::first_level_Schemes"
+ 
+resource="Magento_Backend::content" />
+ 
+</menu>
+ 
+</config>

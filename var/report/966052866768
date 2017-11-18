@@ -1,0 +1,9 @@
+a:4:{i:0;s:273:"Please upgrade your database: Run "bin/magento setup:upgrade" from the Magento root directory. 
+The following modules are outdated:
+PayUIndia_Payu schema: current version - none, required version - 1.0.0
+PayUIndia_Payu data: current version - none, required version - 1.0.0";i:1;s:933:"#0 /home/rkhomeappliances/public_html/vendor/magento/framework/Interception/Interceptor.php(142): Magento\Framework\Module\Plugin\DbStatusValidator->aroundDispatch(Object(Magento\Framework\App\FrontController\Interceptor), Object(Closure), Object(Magento\Framework\App\Request\Http))
+#1 /home/rkhomeappliances/public_html/var/generation/Magento/Framework/App/FrontController/Interceptor.php(26): Magento\Framework\App\FrontController\Interceptor->___callPlugins('dispatch', Array, Array)
+#2 /home/rkhomeappliances/public_html/vendor/magento/framework/App/Http.php(135): Magento\Framework\App\FrontController\Interceptor->dispatch(Object(Magento\Framework\App\Request\Http))
+#3 /home/rkhomeappliances/public_html/vendor/magento/framework/App/Bootstrap.php(258): Magento\Framework\App\Http->launch()
+#4 /home/rkhomeappliances/public_html/index.php(39): Magento\Framework\App\Bootstrap->run(Object(Magento\Framework\App\Http))
+#5 {main}";s:3:"url";s:100:"/adminrk/admin/dashboard/index/key/a8cf77e33ba7bc6f250675da2d4f43c9b32e42c2ea9ac1e3185acf91a4641613/";s:11:"script_name";s:10:"/index.php";}

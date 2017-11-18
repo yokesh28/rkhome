@@ -1,0 +1,15 @@
+[26-Sep-2017 04:46:14 UTC] PHP Fatal error:  Uncaught Error: Cannot instantiate interface Magento\Framework\App\ScopeResolverInterface in /home/rkhomeappliances/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php:73
+Stack trace:
+#0 /home/rkhomeappliances/public_html/vendor/magento/framework/ObjectManager/ObjectManager.php(71): Magento\Framework\ObjectManager\Factory\Dynamic\Developer->create('Magento\\Framewo...')
+#1 /home/rkhomeappliances/public_html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php(126): Magento\Framework\ObjectManager\ObjectManager->get('Magento\\Framewo...')
+#2 /home/rkhomeappliances/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(53): Magento\Framework\ObjectManager\Factory\AbstractFactory->resolveArgument(Array, 'Magento\\Framewo...', NULL, 'scopeResolver', 'Magento\\Framewo...')
+#3 /home/rkhomeappliances/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(82): Magento\Framework\ObjectManager\Factory\Dynamic\Developer->_reso in /home/rkhomeappliances/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73
+[26-Sep-2017 04:46:14 UTC] PHP Fatal error:  Uncaught Error: Cannot instantiate interface Magento\Framework\App\ScopeResolverInterface in /home/rkhomeappliances/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php:73
+Stack trace:
+#0 /home/rkhomeappliances/public_html/vendor/magento/framework/ObjectManager/ObjectManager.php(71): Magento\Framework\ObjectManager\Factory\Dynamic\Developer->create('Magento\\Framewo...')
+#1 /home/rkhomeappliances/public_html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php(126): Magento\Framework\ObjectManager\ObjectManager->get('Magento\\Framewo...')
+#2 /home/rkhomeappliances/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(53): Magento\Framework\ObjectManager\Factory\AbstractFactory->resolveArgument(Array, 'Magento\\Framewo...', NULL, 'scopeResolver', 'Magento\\Framewo...')
+#3 /home/rkhomeappliances/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(82): Magento\Framework\ObjectManager\Factory\Dynamic\Developer->_reso in /home/rkhomeappliances/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73
+[01-Oct-2017 13:11:31 UTC] PHP Fatal error:  Out of memory (allocated 14680064) (tried to allocate 65536 bytes) in /home/rkhomeappliances/public_html/vendor/composer/ClassLoader.php on line 444
+[01-Oct-2017 13:11:31 UTC] PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 147456 bytes) in /home/rkhomeappliances/public_html/vendor/composer/ClassLoader.php on line 444
+[01-Oct-2017 13:11:31 UTC] PHP Fatal error:  Out of memory (allocated 12582912) (tried to allocate 147456 bytes) in /home/rkhomeappliances/public_html/vendor/composer/ClassLoader.php on line 444

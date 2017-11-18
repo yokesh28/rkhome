@@ -1,0 +1,137 @@
+<?php
+/**
+ * Author : Ubakarasamy
+ * Company : Ivisual
+ */
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$cart = $objectManager->get('\Magento\Checkout\Model\Cart'); 
+
+// retrieve quote items collection
+$itemsCollection = $cart->getQuote()->getItemsCollection();
+
+// get array of all items what can be display directly
+$itemsVisible = $cart->getQuote()->getAllVisibleItems();
+
+// retrieve quote items array
+$items = $cart->getQuote()->getAllItems();
+
+foreach($items as $item) {// product id 
+    $it[] = $item->getProductId();
+}
+
+$cartproducts = array_unique($it); // array declaration
+
+
+//here products of customer displays
+
+$customerSession = $objectManager->create("Magento\Customer\Model\Session");
+$customerId = $customerSession->getCustomerId();
+$orders = $objectManager->create('Magento\Sales\Model\Order')->getCollection()
+            ->addFieldToFilter("customer_id", $customerId);
+
+$products = array();
+foreach ($orders as $order) {
+    foreach ($order->getAllVisibleItems() as $item1) {
+        $products[] = $item1->getProductId();
+    }
+}
+$product_list = array_unique($products);
+
+if (array_intersect($cartproducts, $product_list)) {
+    
+ $match = array_intersect($cartproducts, $product_list); // Intersect Products
+
+
+$_product = $objectManager->create('Magento\Catalog\Model\Product')->load($match);
+    $categoryIds = $_product->getCategoryIds();
+    $paymet = $block->getget();
+ 
+
+/*if (in_array(77, $categoryIds)  ) //if its category is schemes
+  {
+    
+    
+
+echo "<h3>Sorry this user already registered for this scheme. You cannot register more than a scheme. </h3>";
+  $block->deleteQuoteItems();*/
+  
+  if(in_array(77, $categoryIds) && $paymet){
+      echo "<div class='hello'>";
+      echo $this->getLayout()->createBlock("send\sms\Block\mobileverification")->setTemplate("send_sms::mobileverification.phtml")->toHtml(); 
+  }
+  
+  
+  
+  
+
+     // remove all items in cart
+
+}
+?>
+
+<!--
+<script type="text/javascript">
+    
+require([
+    'jquery',
+    'Magento_Customer/js/customer-data'
+    ], function($,customerData){
+        $('#customerStore').change(function(){
+            var store_id = $(this).val();
+            var sections = ['cart'];
+            $.ajax({
+            url:'/customer/data/store/store_id/'+store_id,
+            type:'get',
+            dataType: 'html',
+            beforeSend:function(){
+                $('#loader').show();
+            },
+            success:function(response){
+                customerData.invalidate(sections);
+                $('#loader').hide();
+                location.reload();
+            }
+            });
+        });
+    });
+
+</script>
+-->
+<div id="checkout" data-bind="scope:'checkout'" class="checkout-container">
+    <div id="checkout-loader" data-role="checkout-loader" class="loading-mask" data-mage-init='{"checkoutLoader": {}}'>
+        <div class="loader">
+            <img src="<?php /* @escapeNotVerified */ echo $block->getViewFileUrl('images/loader-1.gif'); ?>"
+                 alt="<?php /* @escapeNotVerified */ echo __('Loading...'); ?>"
+                 style="position: absolute;">
+        </div>
+    </div>
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <script type="text/x-magento-init">
+        {
+            "#checkout": {
+                "Magento_Ui/js/core/app": <?php /* @escapeNotVerified */ echo $block->getJsLayout();?>
+            }
+        }
+    </script>
+    <script>
+        window.checkoutConfig = <?php /* @escapeNotVerified */ echo \Zend_Json::encode($block->getCheckoutConfig()); ?>;
+        // Create aliases for customer.js model from customer module
+        window.isCustomerLoggedIn = window.checkoutConfig.isCustomerLoggedIn;
+        window.customerData = window.checkoutConfig.customerData;
+    </script>
+    <script>
+        require([
+            'mage/url',
+            'Magento_Ui/js/block-loader'
+        ], function(url, blockLoader) {
+            blockLoader("<?php /* @escapeNotVerified */ echo $block->getViewFileUrl('images/loader-1.gif'); ?>");
+            return url.setBaseUrl('<?php /* @escapeNotVerified */ echo $block->getBaseUrl();?>');
+        })
+    </script>
+</div>

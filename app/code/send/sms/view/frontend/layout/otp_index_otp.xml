@@ -1,0 +1,26 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+
+	<head>
+        <title>Otp Verification</title>
+        <!-- 
+		demo
+		<css src="Rk_Wallet::css/css.css"/>
+		<script src="Rk_Wallet::js/js.js"/>
+		<css src="jquery/fileUploader/css/jquery.fileupload-ui.css"/>
+		<script src="path/file.js" defer="defer"/>
+		<link src="http://url.com" src_type="url"/>
+		<remove src="path/remove/file.css"/>
+
+		-->
+		<css src="send_sms::css/css.css"/>
+
+    </head> 
+
+    <body>
+
+<referenceContainer name="before.body.end">
+    <block class="\send\sms\Block\otpverification" name="cont" template="send_sms::otp.phtml"/>
+</referenceContainer>
+
+    </body>
+</page>

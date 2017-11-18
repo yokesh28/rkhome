@@ -1,0 +1,79 @@
+<?php
+
+
+
+$this->_resources = \Magento\Framework\App\ObjectManager::getInstance()
+->get('Magento\Framework\App\ResourceConnection');	
+
+$connection= $this->_resources->getConnection();
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$customerSession = $objectManager->create("Magento\Customer\Model\Session");
+$customerId = $customerSession->getCustomerId();
+
+$is_scheme = 1;
+// SELECT DATA
+$sql = "SELECT * FROM wallet_discounts WHERE `customer_id` = '$customerId' AND `is_scheme` = '$is_scheme'";
+
+$result = $connection->fetchall($sql); 
+
+?>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Order Id</th>
+        <th>Created At</th>
+        <th>Days to apptove</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach ($result as $item): ?>  
+      <tr>
+        <td><?php echo $item['product_name'];?></td>
+        <td><?php echo $item['order_id'];?></td>
+        <td><?php
+          $phpdate = strtotime( $item['created_at'] );  // created date
+
+$mysqldate = date( 'Y-m-d', $phpdate ); 
+
+         echo $mysqldate;?></td>
+        <td><?php  
+                
+                if($item['days_to_approve'] <= 0)
+                    {
+                      echo "Approved";
+                    }else{
+                       
+$minus = $item['days_to_approve'];
+
+$newDate = date('Y-m-d', strtotime($item['created_at']. " + {$minus} days")); //add number of days
+
+$today = date('Y-m-d');
+
+$today = strtotime($today);  
+$finish = $newDate;    //finish date
+$finish = strtotime($finish);  
+    //difference
+$diff = $finish - $today;
+
+$daysleft=floor($diff/(60*60*24));
+    
+$days_to_approve = $daysleft;
+
+echo $days_to_approve;
+
+                    }
+            ?></td>
+      </tr>
+    <?php endforeach; ?>  
+    </tbody>
+</table>
+
+
+<?php
+	
+$connection->query($sql);
+    
+?>

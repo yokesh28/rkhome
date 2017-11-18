@@ -1,0 +1,77 @@
+<?php
+/**
+ * Author : Ubakarasamy
+ * Company : Ivisual
+ */
+
+
+
+
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$cart = $objectManager->get('\Magento\Checkout\Model\Cart'); 
+
+// retrieve quote items collection
+$itemsCollection = $cart->getQuote()->getItemsCollection();
+
+// get array of all items what can be display directly
+$itemsVisible = $cart->getQuote()->getAllVisibleItems();
+
+// retrieve quote items array
+$items = $cart->getQuote()->getAllItems();
+
+foreach($items as $item) {// product id 
+    $it[] = $item->getProductId();
+}
+
+$cartproducts = array_unique($it); // array declaration
+
+
+
+
+
+
+//here products of customer displays
+
+$customerSession = $objectManager->create("Magento\Customer\Model\Session");
+$customerId = $customerSession->getCustomerId();
+$orders = $objectManager->create('Magento\Sales\Model\Order')->getCollection()
+            ->addFieldToFilter("customer_id", $customerId);
+
+$products = array();
+foreach ($orders as $order) {
+    foreach ($order->getAllVisibleItems() as $item1) {
+        $products[] = $item1->getProductId();
+    }
+}
+$_product = $objectManager->create('Magento\Catalog\Model\Product')->load($products);
+    $categoryIds = $_product->getCategoryIds();
+
+print_r($orders);
+
+$product_list = array_unique($products);
+
+if (array_intersect($cartproducts, $product_list)) {
+    
+ $match = array_intersect($cartproducts, $product_list); // Intersect Products
+
+
+ $_product = $objectManager->create('Magento\Catalog\Model\Product')->load($match);
+    $categoryIds = $_product->getCategoryIds();
+
+
+if (in_array(51, $categoryIds)) //if its category is schemes
+  {
+
+echo "<h3>You have repeated items In Cart, try adding Differnt products</h3>";
+  $block->deleteQuoteItems();
+  }
+  
+
+  }
+
+     // remove all items in cart
+
+
+
+?>

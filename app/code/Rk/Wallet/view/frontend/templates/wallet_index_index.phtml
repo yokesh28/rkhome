@@ -1,0 +1,21 @@
+<?php
+$helper = $this->helper('Rk\Wallet\Helper\Data');
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+
+$customerSession = $objectManager->get('\Magento\Customer\Model\Session');
+$urlInterface = $objectManager->get('\Magento\Framework\UrlInterface');
+
+if ($helper->isLoggedIn()) {
+    include_once("text.phtml");
+}
+elseif(!$customerSession->isLoggedIn()) {
+    $customerSession->setAfterAuthUrl($urlInterface->getCurrentUrl());
+    $customerSession->authenticate();
+    
+        /*$resultRedirect = $this->resultRedirectFactory->create();
+        $resultRedirect->setPath('home');
+        $customerSession->authenticate($urlInterface->$resultRedirect);*/
+}
+
+

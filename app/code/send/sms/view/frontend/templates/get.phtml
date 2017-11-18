@@ -1,0 +1,78 @@
+<?php
+
+if(!empty(isset($_POST['send']))){
+    $block->checknumber();
+   
+}
+elseif(!empty(isset($_POST['save']))){
+     $block->checkotp();
+}
+
+
+?>
+<style>
+    .additional_form_registration .field1, .additional_form_registration .field2
+    {
+        padding-top:20px!important;
+        padding-bottom:20px!important;
+    }
+    .btn_field
+    {
+        float:right;
+        margin-right:5px;
+        margin-top:5px;
+    }
+    
+    .additional_form_registration {
+    margin-top: -800px;
+}
+.success{
+       margin-top: -840px;
+}
+#row_tab{
+  width: 35%!important;
+  margin-left: 32%!important;
+  margin-top:-15px;
+}
+
+
+.field2 {
+  display: block;
+}
+</style>
+
+
+<form method="post" class="additional_form_registration"> 
+<div class="row" id="row_tab">
+<div class="field1 col-sm-12"  id="field1">
+    <label id="first"> Phone:</label><br/>
+    <input type="tel" name="phone"><br/>
+    <button class="btn_field send_otp" type="submit" name="send" onclick="switchVisible();">send</button><br/>
+</div>
+<div class="field2 col-sm-12" id="field2">
+    <label id="first"> Enter otp:</label><br/>
+    <input type="text" name="getotp"><br/>
+    <button class="btn_field" type="submit" name="save">check</button><br/>
+</div>
+</div>
+
+</form>
+<
+<script>
+function switchVisible() {
+            if (document.getElementById('field1')) {
+
+                if (document.getElementById('field1').style.display == 'none') {
+                    document.getElementById('field1').style.display = 'block';
+                    document.getElementById('field2').style.display = 'none';
+                }
+                else {
+                    document.getElementById('field1').style.display = 'none';
+                    document.getElementById('field2').style.display = 'block';
+                }
+            }
+}
+</script>
+
+
+
